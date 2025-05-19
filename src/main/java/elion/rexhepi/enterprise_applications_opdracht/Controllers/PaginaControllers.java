@@ -1,5 +1,4 @@
 package elion.rexhepi.enterprise_applications_opdracht.Controllers;
-
 import elion.rexhepi.enterprise_applications_opdracht.model.DAO.EventDAO;
 import elion.rexhepi.enterprise_applications_opdracht.model.DAO.LocatieDAO;
 import elion.rexhepi.enterprise_applications_opdracht.model.Event;
@@ -13,8 +12,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.List;
+
+
+//paginacontrollerFix
 
 
 
@@ -75,7 +76,6 @@ public class PaginaControllers {
             model.addAttribute("locaties", locatieDAO.findAll());
             return "new";
         }
-
         event.setLocatie(locatie);
         eventDAOs.save(event);
         return "redirect:/index";

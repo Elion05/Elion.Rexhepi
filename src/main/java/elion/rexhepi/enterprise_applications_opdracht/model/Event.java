@@ -1,7 +1,5 @@
 package elion.rexhepi.enterprise_applications_opdracht.model;
-
 import java.time.LocalDate;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;

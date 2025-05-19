@@ -1,5 +1,4 @@
 package elion.rexhepi.enterprise_applications_opdracht;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
