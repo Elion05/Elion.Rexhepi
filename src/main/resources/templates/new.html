@@ -14,14 +14,31 @@
         <ul>
             <li><a th:href="@{index}">Home</a></li>
             <li><a th:href="@{about}">About us</a></li>
-
-            <li><a th:href="@{EvenementenToevoegen}">Evenement registreren</a></li>
+            <li><a th:href="@{new}">Evenement registreren</a></li>
         </ul>
     </nav>
 </header>
 
-<main>
+<main class="formulier">
     <h1>evenementenToevoegen</h1>
+    <form th:action="@{/new}" th:object="${event}" method="post">
+        <p>Id: <input type="number" th:field="*{id}" required></p>
+        <p>Titel: <input type="text" th:field="*{titel}" required></p>
+        <p>Organisatie: <input type="text" th:field="*{organisatie}" required></p>
+        <p>Omschrijving: <input type="text" th:field="*{omschrijving}" required></p>
+        <p>Email: <input type="email" th:field="*{email}" required></p>
+        <p>Tijdstip: <input type="date" th:field="*{tijdstip}" required></p>
+
+        <p>Kies een geldige locatie:
+        <select th:field="*{locatie.id}">
+            <option th:each="locaties : ${locaties}"
+                    th:value="${locaties.id}"
+                    th:text="${locaties.naam + ' _ ' + locaties.adres}"></option>
+        </select>
+        </p>
+        <p><button type="submit">Bevestig jouw event</button> </p>
+    </form>
+
 </main>
 <footer>
     <p>&copy; 2025  Anderlechts ngo. Alle rechten voorbehouden.</p>
@@ -29,7 +46,7 @@
         <li><a th:href="@{index}">Home</a></li>
         <li><a th:href="@{about}">About us</a></li>
 
-        <li><a th:href="@{EvenementenToevoegen}">Evenement registreren</a></li>
+        <li><a th:href="@{new}">Evenement registreren</a></li>
     </ul>
 </footer>
 </body>

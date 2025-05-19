@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/style.css}">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+
+    <title>About us</title>
 </head>
 <body>
-$END$
+<style>
+    li{
+        list-style: none;
+    }
+</style>
+
+
+<header>
+    <h1>Anderlechtse ngo</h1>
+    <nav class="navigatie">
+        <ul>
+            <li><a th:href="@{index}">Home</a></li>
+            <li><a th:href="@{about}">About us</a></li>
+            <li><a th:href="@{new}">Evenement registreren</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Over ons</h2>
+    <p>
+        Welkom bij Anderlecht NGO, een lokale organisatie
+        gevestigd in het hart van Anderlecht.
+        Wij zetten ons dagelijks in voor een inclusieve en rechtvaardige samenleving,
+        waarin iedereen – ongeacht achtergrond, leeftijd of situatie – de kans krijgt om volwaardig mee te doen.
+    </p>
+
+    <h2>Onze Missie</h2>
+    <p>
+        Onze missie is om sociale cohesie te versterken door middel van festivals, dansfeestjes, sportactiviteiten, eetfestijnen en quizes.
+        We geloven dat echte verandering begint bij verbinding en samenwerking binnen onze diverse buurt.
+    </p>
+
+    <h2>Contact</h2>
+    <address>
+        <p><strong>Adres:</strong> Gemeenschapscentrum Nova, Elsensesteenweg 208, 1050 Brussel</p>
+        <p><strong>E-mail:</strong> <a href="mailto:info@anderlechtngo.be">info@anderlechtngo.be</a></p>
+        <p><strong>Telefoon:</strong> <a href="tel:+3221234567">+32 2 123 45 67</a></p>
+    </address>
+
+</main>
+<footer>
+    <p>&copy; 2025  Anderlechts ngo. Alle rechten voorbehouden.</p>
+    <ul>
+        <li><a th:href="@{index}">Home</a></li>
+        <li><a th:href="@{about}">About us</a></li>
+        <li><a th:href="@{new}">Evenement registreren</a></li>
+    </ul>
+</footer>
 </body>
 </html>

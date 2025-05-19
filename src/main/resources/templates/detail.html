@@ -1,10 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/style.css}">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+
+    <title>Homepage</title>
 </head>
+
+
+<style>
+    /* Tabel stijl */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    thead {
+        background-color: #11ae6f;
+        color: white;
+        text-align: left;
+    }
+
+    th, td {
+        padding: 12px 16px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    td a {
+        color: #11ae6f;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    td a:hover {
+        text-decoration: underline;
+    }
+
+</style>
 <body>
-$END$
+
+<header>
+    <h1>Anderlechtse ngo</h1>
+    <nav class="navigatie">
+        <ul>
+            <li><a th:href="@{index}">Home</a></li>
+            <li><a th:href="@{about}">About us</a></li>
+            <li><a th:href="@{new}">Evenement registreren</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2 th:text="${event.titel}">Details Event</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Adres</th>
+            <th>Tijdstip</th>
+            <th>Omschrijving</th>
+            <th>Capaciteit</th>
+            <th>Email</th>
+            <th>Naam</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${event.locatie.adres}"></td>
+            <td th:text="${event.tijdstip}"></td>
+            <td th:text="${event.omschrijving}"></td>
+            <td th:text="${event.locatie.capaciteit}"></td>
+            <td th:text="${event.email}"></td>
+            <td th:text="${event.locatie.naam}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</main>
+<footer>
+    <p>&copy; 2025  Anderlechts ngo. Alle rechten voorbehouden.</p>
+    <ul>
+        <li><a th:href="@{index}">Home</a></li>
+        <li><a th:href="@{about}">About us</a></li>
+        <li><a th:href="@{new}">Evenement registreren</a></li>
+    </ul>
+</footer>
 </body>
 </html>

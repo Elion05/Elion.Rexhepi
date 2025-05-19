@@ -1,4 +1,8 @@
 package elion.rexhepi.enterprise_applications_opdracht.model.DAO;
 
-public interface LocatieDAO {
+import elion.rexhepi.enterprise_applications_opdracht.model.Locatie;
+import org.springframework.data.repository.CrudRepository;
+
+
+public interface LocatieDAO extends CrudRepository<Locatie, Integer> {
 }
