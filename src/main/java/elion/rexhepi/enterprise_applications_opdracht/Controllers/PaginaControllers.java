@@ -28,7 +28,6 @@ public class PaginaControllers {
     private LocatieDAO locatieDAO;
 
 
-
     //hier voeg ik 3 info dingen voor de bij de index pagina
     @GetMapping({"/index", "", "/"})
     public String index(Model index) {
@@ -42,8 +41,6 @@ public class PaginaControllers {
     public String aboutTonen() {
         return "about";
     }
-
-
 
 
     //hier hetzelfde als bij de index pagina maar gewoon meer informatie + query parameter zie EventDAO
