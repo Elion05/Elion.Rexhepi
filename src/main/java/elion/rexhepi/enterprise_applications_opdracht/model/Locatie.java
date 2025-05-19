@@ -10,7 +10,6 @@ import jakarta.validation.constraints.Size;
 @Entity
 public class Locatie {
     @Id
-    @NotBlank
     private int id;
 
     @NotBlank

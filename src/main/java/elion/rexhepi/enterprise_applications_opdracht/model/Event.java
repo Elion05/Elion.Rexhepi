@@ -14,7 +14,6 @@ import jakarta.validation.constraints.Size;
 @Entity
 public class Event {
     @Id
-    @NotBlank
     private int id;
 
     @NotNull
