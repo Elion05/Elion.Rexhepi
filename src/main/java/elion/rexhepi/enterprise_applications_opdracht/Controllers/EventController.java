@@ -1,8 +1,8 @@
 package elion.rexhepi.enterprise_applications_opdracht.Controllers;
 import elion.rexhepi.enterprise_applications_opdracht.model.DAO.EventDAO;
 import elion.rexhepi.enterprise_applications_opdracht.model.DAO.LocatieDAO;
-import elion.rexhepi.enterprise_applications_opdracht.model.Event;
-import elion.rexhepi.enterprise_applications_opdracht.model.Locatie;
+import elion.rexhepi.enterprise_applications_opdracht.model.EntiteitenKlasse.Event;
+import elion.rexhepi.enterprise_applications_opdracht.model.EntiteitenKlasse.Locatie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

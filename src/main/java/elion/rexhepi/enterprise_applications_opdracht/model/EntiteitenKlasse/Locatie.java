@@ -1,4 +1,4 @@
-package elion.rexhepi.enterprise_applications_opdracht.model;
+package elion.rexhepi.enterprise_applications_opdracht.model.EntiteitenKlasse;
 import jakarta.persistence.*;
 import jakarta.persistence.OneToMany;
 import java.util.List;

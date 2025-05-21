@@ -1,5 +1,5 @@
 package elion.rexhepi.enterprise_applications_opdracht.model.DAO;
-import elion.rexhepi.enterprise_applications_opdracht.model.Event;
+import elion.rexhepi.enterprise_applications_opdracht.model.EntiteitenKlasse.Event;
 import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
