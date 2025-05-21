@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface EventDAO extends CrudRepository<Event, Integer> {
 
-    //om de events op de index pagina te kunnen weergeven
+    //je kan de 10 veranderen om meer data te tonen
     List<Event> findTop10ByOrderByTijdstipDesc();
+
 }

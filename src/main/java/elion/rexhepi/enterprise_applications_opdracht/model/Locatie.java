@@ -40,31 +40,41 @@ public class Locatie {
     public double getCapaciteit() {
         return capaciteit;
     }
+
     public void setCapaciteit(double capaciteit) {
         this.capaciteit = capaciteit;
     }
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getNaam() {
         return naam;
     }
+
     public void setNaam(String naam) {
         this.naam = naam;
     }
+
     public String getAdres() {
         return adres;
     }
+
     public void setAdres(String adres) {
         this.adres = adres;
     }
+
     public List<Event> getEvents() {
         return events;
     }
+
     public void setEvents(List<Event> events) {
         this.events = events;
     }
+
 }

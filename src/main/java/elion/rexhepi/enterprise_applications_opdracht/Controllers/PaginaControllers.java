@@ -18,18 +18,18 @@ import java.util.List;
 //paginacontrollerFix
 
 
-
 //controller voor alle paginas
 @Controller
 public class PaginaControllers {
 
     @Autowired
     private EventDAO eventDAOs;
+
     @Autowired
     private LocatieDAO locatieDAO;
 
 
-    //hier voeg ik 3 info dingen voor de bij de index pagina
+    //hier voeg ik info  voor de bij de index pagina
     @GetMapping({"/index", "", "/"})
     public String index(Model index) {
         List<Event> laatsteEvents = eventDAOs.findTop10ByOrderByTijdstipDesc();
@@ -44,9 +44,10 @@ public class PaginaControllers {
     }
 
 
-    //hier hetzelfde als bij de index pagina maar gewoon meer informatie + query parameter zie EventDAO
+    //hier hetzelfde als bij de index pagina maar gewoon meer informatie
     @GetMapping("/detail")
     public String detailTonen(@RequestParam("id")int id, Model detailsmodel) {
+        //druk op button -> toont data op id "gekozen event"
         Event event = eventDAOs.findById(id).orElse(null);
         detailsmodel.addAttribute("event", event);
         return "detail";
@@ -59,6 +60,7 @@ public class PaginaControllers {
         newmodel.addAttribute("locaties", locatieDAO.findAll());
         return "new";
     }
+
     @PostMapping("/new")
     public String eventToevoegen(@ModelAttribute("event") @Valid Event event,
                                  BindingResult result,
@@ -76,10 +78,10 @@ public class PaginaControllers {
             model.addAttribute("locaties", locatieDAO.findAll());
             return "new";
         }
+
         event.setLocatie(locatie);
         eventDAOs.save(event);
         return "redirect:/index";
     }
-    
 }
 

@@ -3,12 +3,10 @@
 <link rel="stylesheet" th:href="@{/style.css}">
 <head>
     <meta charset="UTF-8">
-
-
     <title>New</title>
+
 </head>
 <body>
-
 <header>
     <h1>Anderlechtse ngo</h1>
     <nav class="navigatie">
@@ -19,7 +17,6 @@
         </ul>
     </nav>
 </header>
-
 <main class="formulier">
     <h1>evenementenToevoegen</h1>
     <form th:action="@{/new}" th:object="${event}" method="post">
@@ -42,13 +39,15 @@
 
 </main>
 <footer>
+
     <p>&copy; 2025  Anderlechts ngo. Alle rechten voorbehouden.</p>
+
     <ul>
         <li><a th:href="@{index}">Home</a></li>
         <li><a th:href="@{about}">About us</a></li>
-
         <li><a th:href="@{new}">Evenement registreren</a></li>
     </ul>
+
 </footer>
 </body>
 </html>

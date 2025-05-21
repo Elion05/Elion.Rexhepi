@@ -15,6 +15,7 @@ import java.time.LocalDate;
 public class EventController {
 
     private EventDAO eventDAO;
+
     private LocatieDAO locatieDAO;
 
     @Autowired
@@ -22,6 +23,7 @@ public class EventController {
         this.eventDAO = eventDAO;
         this.locatieDAO = locatieDAO;
     }
+
     //table maken in databases
     @PostMapping("/locatie")
     public void addLocatie(@RequestParam int id, @RequestParam String naam,
@@ -39,10 +41,11 @@ public class EventController {
             Event event = new Event(id,tijdstip, titel, omschrijving, organisatie, email, foundLocatie);
             eventDAO.save(event);
             return new ResponseEntity<>(event, HttpStatus.OK);
-        }else {
+        }else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
     @GetMapping
     public Iterable<Event> getAlleEvenementen() {
         return eventDAO.findAll();

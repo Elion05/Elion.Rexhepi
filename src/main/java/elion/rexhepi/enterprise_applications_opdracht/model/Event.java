@@ -105,7 +105,9 @@ public class Event {
     public Locatie getLocatie() {
         return locatie;
     }
+
     public void setLocatie(Locatie locatie) {
         this.locatie = locatie;
     }
+
 }
