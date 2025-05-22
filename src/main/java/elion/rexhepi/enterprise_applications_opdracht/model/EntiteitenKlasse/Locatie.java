@@ -3,24 +3,27 @@ import jakarta.persistence.*;
 import jakarta.persistence.OneToMany;
 import java.util.List;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
 public class Locatie {
+
     @Id
     private int id;
 
-    @NotBlank
+    @NotBlank(message = "niet leeg zijn aub")
     @Size(min=1, max=50)
     private String naam;
 
-    @NotBlank
+    @NotBlank(message = "niet leeg zijn")
     @Size(min=1, max=50)
     private String adres;
 
-    @NotBlank
-    @Size(min=1, max=50000)
+    @Min(1)
+    @NotNull(message = "Not null alstublieft")
     private double capaciteit;
 
     @OneToMany(mappedBy = "locatie")

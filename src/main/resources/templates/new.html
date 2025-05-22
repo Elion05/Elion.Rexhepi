@@ -22,12 +22,24 @@
 <main class="formulier">
     <h1>evenementenToevoegen</h1>
     <form th:action="@{/new}" th:object="${event}" method="post">
-        <p>Id: <input type="number" th:field="*{id}" required></p>
-        <p>Titel: <input type="text" th:field="*{titel}" required></p>
-        <p>Organisatie: <input type="text" th:field="*{organisatie}" required></p>
-        <p>Omschrijving: <input type="text" th:field="*{omschrijving}" required></p>
-        <p>Email: <input type="email" th:field="*{email}" required></p>
-        <p>Tijdstip: <input type="date" th:field="*{tijdstip}" required></p>
+        <p>Titel: <input type="text" th:field="*{titel}" required>
+            <span th:if="${#fields.hasErrors('titel')}" th:errors="*{titel}" style="color: red">
+        </span></p>
+
+        <p>Organisatie: <input type="text" th:field="*{organisatie}" required>
+            <span th:if="${#fields.hasErrors('organisatie')}" th:errors="*{organisatie}" style="color: red">
+        </span></p>
+
+        <p>Omschrijving: <input type="text" th:field="*{omschrijving}" required>
+        <span th:if="${#fields.hasErrors('omschrijving')}" th:errors="*{omschrijving}" style="color: red">
+        </span></p>
+
+        <p>Email: <input type="email" th:field="*{email}" required>
+        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red"></span>
+        </p>
+
+        <p>Tijdstip: <input type="date" th:field="*{tijdstip}" required>
+        <span th:if="${#fields.hasErrors('tijdstip')}" th:errors="*{tijdstip}" style="color:red"></span></p>
 
         <p>Kies een geldige locatie:
         <select th:field="*{locatie.id}">

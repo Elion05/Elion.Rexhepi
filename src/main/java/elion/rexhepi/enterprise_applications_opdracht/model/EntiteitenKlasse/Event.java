@@ -1,37 +1,34 @@
 package elion.rexhepi.enterprise_applications_opdracht.model.EntiteitenKlasse;
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
 public class Event {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
+    @NotNull(message = "Niet nulllllllllll alstublieft danku")
+    @Future(message = "Kies een geldige datum, in de toekomst liefst")
     private LocalDate tijdstip;
 
-    @NotBlank
+    @NotBlank(message = "Vul een titel in (dat is toch logisch dacht ik)")
     @Size(min = 1, max = 50)
     private String titel;
 
-    @NotBlank
-    @Size(min = 1, max = 50)
+    @NotBlank(message = "NOT BLANK AAAH")
+    @Size(min = 1, max = 200)
     private String omschrijving;
 
-    @NotBlank
+    @NotBlank(message = "Not blank")
     @Size(min = 1, max = 50)
     private String organisatie;
 
-    @NotBlank
-    @Email
+    @NotBlank(message = "Email adres mag niet leeg zijn")
+    @Email(message = "geef een geldige email adres... of anders...")
     private String email;
 
 
@@ -52,6 +49,14 @@ public class Event {
         this.locatie = foundLocatie;
     }
 
+    public Event(LocalDate tijdstip, String titel, String omschrijving, String organisatie, String email, Locatie foundLocatie) {
+        this.titel = titel;
+        this.omschrijving = omschrijving;
+        this.organisatie = organisatie;
+        this.email = email;
+        this.tijdstip = tijdstip;
+        this.locatie = foundLocatie;
+    }
     public Event() {
     }
 

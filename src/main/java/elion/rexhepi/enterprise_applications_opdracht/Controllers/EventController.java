@@ -33,12 +33,12 @@ public class EventController {
     }
 
     @PostMapping
-    public ResponseEntity<Event> addEvent(@RequestParam int id,@RequestParam LocalDate tijdstip, @RequestParam String titel, @RequestParam
+    public ResponseEntity<Event> addEvent(@RequestParam LocalDate tijdstip, @RequestParam String titel, @RequestParam
                                                 String omschrijving, @RequestParam String organisatie, @RequestParam String email, @RequestParam int locatie_id){
         if (locatieDAO.existsById(locatie_id)){
             Locatie foundLocatie = locatieDAO.findById(locatie_id).get();
 
-            Event event = new Event(id,tijdstip, titel, omschrijving, organisatie, email, foundLocatie);
+            Event event = new Event(tijdstip, titel, omschrijving, organisatie, email, foundLocatie);
             eventDAO.save(event);
             return new ResponseEntity<>(event, HttpStatus.OK);
         }else{
