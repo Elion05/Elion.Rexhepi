@@ -16,14 +16,14 @@ public class Event {
     private LocalDate tijdstip;
 
     @NotBlank(message = "Vul een titel in (dat is toch logisch dacht ik)")
-    @Size(min = 1, max = 50)
+    @Size(min = 5, max = 50, message = "titel moet tussen 5 en 50 lengte hebben")
     private String titel;
 
     @NotBlank(message = "NOT BLANK AAAH")
-    @Size(min = 1, max = 200)
+    @Size(min = 2, max = 200, message = "minstens 2 woorden voor de omschrijving tot 200 woorden")
     private String omschrijving;
 
-    @NotBlank(message = "Not blank")
+    @NotBlank(message = "minstens 1 woord/naam")
     @Size(min = 1, max = 50)
     private String organisatie;
 
