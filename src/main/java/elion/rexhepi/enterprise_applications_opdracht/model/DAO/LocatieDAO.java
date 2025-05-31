@@ -3,4 +3,5 @@ import elion.rexhepi.enterprise_applications_opdracht.model.EntiteitenKlasse.Loc
 import org.springframework.data.repository.CrudRepository;
 
 public interface LocatieDAO extends CrudRepository<Locatie, Integer> {
+
 }

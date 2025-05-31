@@ -11,6 +11,7 @@ import jakarta.validation.constraints.Size;
 @Entity
 public class Locatie {
 
+
     @Id
     private int id;
 

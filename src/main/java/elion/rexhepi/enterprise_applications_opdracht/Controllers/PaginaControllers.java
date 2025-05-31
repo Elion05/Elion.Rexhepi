@@ -67,6 +67,7 @@ public class PaginaControllers {
                                  @RequestParam("locatie.id") int locatieId,
                                  Model model) {
 
+
         if (result.hasErrors()) {
             model.addAttribute("locaties", locatieDAO.findAll());
             return "new";

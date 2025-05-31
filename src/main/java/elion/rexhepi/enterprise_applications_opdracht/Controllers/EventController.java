@@ -18,6 +18,7 @@ public class EventController {
 
     private LocatieDAO locatieDAO;
 
+
     @Autowired
     public EventController(EventDAO eventDAO, LocatieDAO locatieDAO) {
         this.eventDAO = eventDAO;

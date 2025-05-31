@@ -39,6 +39,7 @@ public class Event {
 
 
 
+
     public Event(int id, LocalDate tijdstip, String titel, String omschrijving, String organisatie, String email, Locatie foundLocatie) {
         this.titel = titel;
         this.id = id;
